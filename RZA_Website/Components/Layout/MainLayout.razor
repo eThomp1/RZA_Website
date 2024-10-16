@@ -1,23 +1,33 @@
 ﻿@inherits LayoutComponentBase
+<!DOCTYPE html>
+<head>
+    @* Required *@
+    <MudThemeProvider />
+    <MudPopoverProvider />
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+    @* Needed for dialogs *@
+    <MudDialogProvider />
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+    @* Needed for snackbars *@
+    <MudSnackbarProvider />
+    <title>Welcome to Riget Zoo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+    <header>
+        <div>
+            <ul>
+                <li><a class="active" href="/">Home</a></li>
+                <li><a href="/explore">Explore</a></li>
+                <li><a href="/aboutus">About Us</a></li>
+                <li><a href="/hotelbooking">Hotel Booking</a></li>
+                <li><a href="/booking">Booking</a></li>
+                <li style="float:right;"><a href="/login">Image</a></li>
+            </ul>
         </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
-
-<div id="blazor-error-ui">
-    An unhandled error has occurred.
-    <a href="" class="reload">Reload</a>
-    <a class="dismiss">🗙</a>
-</div>
+        
+    </header>
+<body>
+    @Body
+</body>

@@ -1,0 +1,48 @@
+﻿@using RZA_Website.Services
+@using RZA_Website.Models
+@inject CustomerService CustomerService
+@rendermode InteractiveServer
+@page "/register"
+
+<link rel="stylesheet" href="css/style.css" />
+
+<body>
+    <h3>Register</h3>
+
+    <div>
+        <label>Username</label>
+        <input @bind=newCustomer.Username>
+    </div>
+
+    <div>
+        <label>Password</label>
+        <input @bind=newCustomer.Password>
+    </div>
+    <div>
+        <label>First Name</label>
+        <input @bind=newCustomer.FirstName>
+    </div>
+
+    <div>
+        <label>Last Name</label>
+        <input @bind=newCustomer.LastName>
+    </div>
+
+    <div>
+        <label>Email</label>
+        <input @bind=newCustomer.Email>
+    </div>
+    <MudButton @onclick=@RegisterCustomer>Register</MudButton>
+
+</body>
+<button>AAAAAAAAAAAAAAAAAAAAAAAAAA</button>
+@code {
+    private Customer newCustomer = new Customer();
+
+
+    private async Task RegisterCustomer()
+    {
+        Console.WriteLine("a");
+        await CustomerService.AddCustomerAsync(newCustomer);
+    }
+}

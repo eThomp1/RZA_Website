@@ -1,33 +1,32 @@
 ﻿@inherits LayoutComponentBase
 <!DOCTYPE html>
 <head>
-    @* Required *@
+
     <MudThemeProvider />
     <MudPopoverProvider />
 
-    @* Needed for dialogs *@
+
     <MudDialogProvider />
 
-    @* Needed for snackbars *@
     <MudSnackbarProvider />
     <title>Welcome to Riget Zoo</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 
-    <header>
-        <div>
-            <ul>
-                <li><a class="active" href="/">Home</a></li>
-                <li><a href="/explore">Explore</a></li>
-                <li><a href="/aboutus">About Us</a></li>
-                <li><a href="/hotelbooking">Hotel Booking</a></li>
-                <li><a href="/booking">Booking</a></li>
-                <li style="float:right;"><a href="/login">Image</a></li>
-            </ul>
-        </div>
-        
-    </header>
+<header>
+    <div>
+        <ul>
+            <li><a class="active" href="/">Home</a></li>
+            <li><a href="/explore">Explore</a></li>
+            <li><a href="/aboutus">About Us</a></li>
+            <li><a href="/hotelbooking">Hotel Booking</a></li>
+            <li><a href="/booking">Booking</a></li>
+            <li style="float:right;"><a href="/login">Image</a></li>
+        </ul>
+    </div>
+
+</header>
 <body>
     @Body
 </body>

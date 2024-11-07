@@ -58,8 +58,8 @@
 
     private async Task HandleValidSubmit()
     {
-        bool usernameTaken = await CustomerService.CheckUsernameExistsAsync(newCustomer.Username);
-        bool passwordValid = await PasswordUtils.ValidPassword(password);
+        bool usernameTaken = true;
+        bool passwordValid = true;
         if (usernameTaken)
         {
             Console.WriteLine("username taken");
@@ -71,8 +71,7 @@
         }
         else
         {
-            // Hash the password using SHA256
-            newCustomer.Password = PasswordUtils.HashPassword(password);
+            newCustomer.Password = password;
 
             // Insert the user into the database
             await CustomerService.AddCustomerAsync(newCustomer);

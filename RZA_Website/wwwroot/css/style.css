@@ -50,6 +50,7 @@ li {
 .home_img{
     width: 500px;
     margin: 40px;
+    padding:40px;
     height: 200px;
     border-radius: 25px;
 }

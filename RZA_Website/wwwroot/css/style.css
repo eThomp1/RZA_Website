@@ -61,9 +61,18 @@ li {
     margin-left: 30%;
     margin-right: 30%;
     border-radius: 25px;
-    align-content:center;
-    
+    justify-content:center;
+
 }
+    .login input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
 #loginButton{
 
 }

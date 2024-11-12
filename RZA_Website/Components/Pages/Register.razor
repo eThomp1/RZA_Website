@@ -16,19 +16,19 @@
     <div>
         <label>Username:</label>
             <br>
-        <InputText @bind-Value="newCustomer.Username" />
+        <InputText @bind-Value=newCustomer.Username />
     </div>
 
     <div>
         <label>Password:</label>
             <br>
-        <InputText @bind-Value="password" type="password" />
+        <InputText @bind-Value=password type="password" />
     </div>
 
     <div>
         <label>First Name:</label>
             <br>
-        <InputText @bind-Value="newCustomer.FirstName" />
+        <InputText @bind-Value=newCustomer.FirstName />
     </div>
 
     <div>
@@ -63,16 +63,10 @@
 
     private async Task HandleValidSubmit()
     {
-        bool usernameTaken = true;
-        bool passwordValid = true;
-        if (usernameTaken)
+        if (newCustomer.Username == null || newCustomer.FirstName == null || newCustomer.LastName == null || newCustomer.Email == null || password == null)
         {
-            Console.WriteLine("username taken");
-            message = "username taken";
-        }
-        else if (!passwordValid)
-        {
-            message = "password does not meet criteria";
+            message = "Fill out all inputs";
+            Console.WriteLine("TEST");
         }
         else
         {

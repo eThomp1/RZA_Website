@@ -12,37 +12,42 @@
 <EditForm Model="newCustomer" OnValidSubmit="HandleValidSubmit" FormName="testForm">
     <DataAnnotationsValidator />
     <ValidationSummary />
-
+<div class="login">
     <div>
         <label>Username:</label>
+            <br>
         <InputText @bind-Value="newCustomer.Username" />
     </div>
 
     <div>
         <label>Password:</label>
+            <br>
         <InputText @bind-Value="password" type="password" />
     </div>
 
     <div>
         <label>First Name:</label>
+            <br>
         <InputText @bind-Value="newCustomer.FirstName" />
     </div>
 
     <div>
         <label>Last Name:</label>
+            <br>
         <InputText @bind-Value="newCustomer.LastName" />
     </div>
 
     <div>
         <label>Email Address:</label>
+            <br>
         <InputText @bind-Value="newCustomer.Email" />
     </div>
     <div>
         <label style="color:red">@message</label>
     </div>
     <button type="submit">Register</button>
+</div>
 </EditForm>
-<button>AAAAAAAAAAAAAAAAAAAAAAAAAA</button>
 @code {
     private Customer newCustomer = new Customer();
     private string password;

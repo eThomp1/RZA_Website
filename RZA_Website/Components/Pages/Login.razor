@@ -6,23 +6,27 @@
 @inject NavigationManager NavigationManager
 @inject UserSession UserSession
 @rendermode InteractiveServer
+<link rel="stylesheet" href="css/style.css">
 <h3>Login</h3>
 
 <EditForm Model="newCustomer" OnValidSubmit="HandleValidSubmit" FromName="LoginForm">
     <DataAnnotationsValidator />
     <ValidationSummary />
-
+<div class="login">
     <div>
         <label>Username:</label>
+        <br>
         <InputText @bind-Value="newCustomer.Username" />
     </div>
 
     <div>
         <label>Password:</label>
+        <br>
         <InputText @bind-Value="password" type="password" />
     </div>
 
-    <button type="submit">Register</button>
+    <button type="submit">Login</button>
+</div>
 </EditForm>
 
 @code {

@@ -47,10 +47,10 @@ li {
     margin: 20px;
     width: 800px;
 }
-.home_img{
-    width: 500px;
-    margin: 40px;
-    padding:40px;
+.home_img {
+    background-image: url(\wwwroot\Images\download.jpg);
+    margin-right: 60%;
+    padding: 40px;
     height: 200px;
     border-radius: 25px;
 }
@@ -64,15 +64,7 @@ li {
     justify-content:center;
 
 }
-    .login input[type=text] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
+
 #loginButton{
 
 }

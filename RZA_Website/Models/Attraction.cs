@@ -9,5 +9,7 @@ public partial class Attraction
 
     public string AttractionName { get; set; } = null!;
 
+    public int Price { get; set; }
+
     public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
 }

@@ -28,7 +28,9 @@ public partial class TlS2303064Rza2Context : DbContext
 
     public virtual DbSet<Ticketbooking> Ticketbookings { get; set; }
 
-    
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        => optionsBuilder.UseMySql("name=MySqlConnection", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.29-mysql"));
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder
@@ -45,6 +47,7 @@ public partial class TlS2303064Rza2Context : DbContext
             entity.Property(e => e.AttractionName)
                 .HasMaxLength(45)
                 .HasColumnName("attractionName");
+            entity.Property(e => e.Price).HasColumnName("price");
         });
 
         modelBuilder.Entity<Customer>(entity =>

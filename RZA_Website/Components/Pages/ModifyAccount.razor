@@ -7,19 +7,27 @@
 
 <h3>ModifyAccount</h3>
 
-<p>new password</p>
-<input @bind-value=@newPassword />
 <p>old password</p>
 <input @bind-value=@oldPassword />
-<p>confirm old password</p>
+<p>new password</p>
+<input @bind-value=@newPassword />
+<p>confirm new password</p>
 <input @bind-value=@newPasswordConfirm />
+<div>
+    <label style="color:red">@message</label>
+</div>
 <button onclick=@ChangePassword>Change Password</button>
 @code {
     private string newPassword;
     private string oldPassword;
+    private string message;
     private string newPasswordConfirm;
     private async Task ChangePassword()
     {
+        if (newPassword == null || oldPassword == null || newPasswordConfirm == null)
+        { 
+            message = "Fill out all inputs";
+        }
         if (newPassword == newPasswordConfirm)
         {
 

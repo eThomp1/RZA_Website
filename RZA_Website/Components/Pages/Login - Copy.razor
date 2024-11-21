@@ -1,0 +1,50 @@
+﻿@page "/login2"
+@using RZA_Website.Models
+@using RZA_Website.Utilities
+@using RZA_Website.Services
+@inject CustomerService CustomerService
+@inject NavigationManager NavigationManager
+@inject UserSession UserSession
+@rendermode InteractiveServer
+<link rel="stylesheet" href="css/style.css">
+<h3>Login</h3>
+
+<EditForm Model="newCustomer" OnValidSubmit="HandleValidSubmit" FromName="LoginForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+<div class="logintest">
+    <div>
+        <label>Username:</label>
+        <br>
+            <input type="text" id="newCustomer.Username" placeholder="Username..."/>
+    </div>
+
+    <div>
+        <label>Password:</label>
+        <br>
+        <InputText @bind-Value="password" type="password" />
+    </div>
+
+    <button type="submit">Login</button>
+</div>
+</EditForm>
+
+@code {
+    private Customer newCustomer = new Customer();
+    private string password;
+
+    private async Task HandleValidSubmit()
+    {
+        newCustomer.Password = password;
+        newCustomer = await CustomerService.LogIn(newCustomer);
+        if (newCustomer == null)
+        {
+            Console.WriteLine("Could not Login");
+        }
+        else
+        {
+            UserSession.UserID = newCustomer.CustomerId;
+            NavigationManager.NavigateTo("/");
+        }
+    }
+}

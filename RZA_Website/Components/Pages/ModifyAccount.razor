@@ -4,19 +4,30 @@
 @rendermode InteractiveServer
 
 @page "/modify"
-
+<link rel="stylesheet" href="css/style.css" />
 <h3>ModifyAccount</h3>
+<div class="login">
+    <div>
+        <label>Old password</label>
+        <br>
+        <input @bind-value=@oldPassword />
+    </div>
+    <div>
+        <label>New password</label>
+        <br>
+        <input @bind-value=@newPassword />
+    </div>
+    <div>
+        <label>Confirm new password:</label>
+        <br>
+        <input @bind-value=@newPasswordConfirm />
+    </div>
+    <div>
+        <label style="color:red">@message</label>
+    </div>
 
-<p>old password</p>
-<input @bind-value=@oldPassword />
-<p>new password</p>
-<input @bind-value=@newPassword />
-<p>confirm new password</p>
-<input @bind-value=@newPasswordConfirm />
-<div>
-    <label style="color:red">@message</label>
+    <button onclick=@ChangePassword>Change Password</button>
 </div>
-<button onclick=@ChangePassword>Change Password</button>
 @code {
     private string newPassword;
     private string oldPassword;
